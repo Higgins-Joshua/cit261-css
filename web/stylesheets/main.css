@@ -17,7 +17,6 @@
 }
 
 .col-12 {
-    position: relative;
     width: 100%;
     min-height: 1px;
     padding-right: 15px;
@@ -33,3 +32,5 @@ h3 {
     line-height: 1.1;
     font-family: 'Open Sans', sans-serif;
 }
+
+/* CSS for lesson below:  */
