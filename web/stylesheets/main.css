@@ -27,10 +27,218 @@
     max-width: 100%;
 }
 
+.col-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 33.333333%;
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+@media (max-width: 1000px) {
+    .col-4 {
+        -webkit-flex: 0 0 100%;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
 h3 {
     font-weight: 500;
     line-height: 1.1;
     font-family: 'Open Sans', sans-serif;
 }
 
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top-width: 0px;
+    border-top-style: none;
+    border-top-color: currentcolor;
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    -webkit-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.primary {
+    color: #0275d8;
+    background-image: none;
+    background-color: transparent;
+    border-color: #0275d8;
+}
+
+.primary:hover {
+    background-color: #0275D8;
+    color: #FAFCFE;
+    cursor: pointer;
+}
+
 /* CSS for lesson below:  */
+
+/* bouncing balls */
+#balls {
+    text-align: center;
+    height: 255px;
+}
+
+#balls ul {
+    text-align: center;
+    list-style: none;
+}
+
+#balls ul li {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    /* http://cubic-bezier.com/#.25,.33,.51,1.3 */
+    -webkit-animation: bounce-balls 1.2s cubic-bezier(0.245, 0.325, 0.51, 1.305) infinite alternate;
+            animation: bounce-balls 1.2s cubic-bezier(0.245, 0.325, 0.51, 1.305) infinite alternate;
+}
+
+#balls ul li:nth-child(1) {
+    background: red;
+    -webkit-animation-delay: 0.1s;
+            animation-delay: 0.1s;
+}
+
+#balls ul li:nth-child(2) {
+    background: orange;
+    -webkit-animation-delay: 0.2s;
+            animation-delay: 0.2s;
+}
+
+#balls ul li:nth-child(3) {
+    background: yellow;
+    -webkit-animation-delay: 0.3s;
+            animation-delay: 0.3s;
+}
+
+#balls ul li:nth-child(4) {
+    background: green;
+    -webkit-animation-delay: 0.4s;
+            animation-delay: 0.4s;
+}
+
+#balls ul li:nth-child(5) {
+    background: blue;
+    -webkit-animation-delay: 0.5s;
+            animation-delay: 0.5s;
+}
+
+#balls ul li:nth-child(6) {
+    background: purple;
+    -webkit-animation-delay: 0.6s;
+            animation-delay: 0.6s;
+}
+
+/* The @keyframes CSS at-rule controls the intermediate steps 
+in a CSS animation sequence by defining styles for keyframes 
+(or waypoints) along the animation sequence. */
+@-webkit-keyframes bounce-balls {
+    30% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+    }
+    60% {
+        -webkit-transform: translateY(205px);
+                transform: translateY(205px);
+    }
+    80% {
+        -webkit-transform: translateY(190px);
+                transform: translateY(190px);
+    }
+    100% {
+        -webkit-transform: translateY(195px);
+                transform: translateY(195px);
+    }
+}
+
+@keyframes bounce-balls {
+    30% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+    }
+    60% {
+        -webkit-transform: translateY(205px);
+                transform: translateY(205px);
+    }
+    80% {
+        -webkit-transform: translateY(190px);
+                transform: translateY(190px);
+    }
+    100% {
+        -webkit-transform: translateY(195px);
+                transform: translateY(195px);
+    }
+}
+/* end bouncing balls */
+
+/* animatedSquare */
+#animatedSquare {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+
+    /* -webkit-animation-name: animatedSquare;
+    -webkit-animation-duration: 2s;
+    animation-name: animatedSquare;
+    animation-duration: 2s; */
+
+    -webkit-animation: animatedSquare 2s infinite alternate;
+            animation: animatedSquare 2s infinite alternate;
+}
+
+@-webkit-keyframes animatedSquare {
+    from {background-color:  #eaf2f8 ;}
+    to {background-color:  #154360 ;}
+}
+
+@keyframes animatedSquare {
+    from {background-color:  #eaf2f8 ;}
+    to {background-color:  #154360 ;}
+}
+/* end animatedSquare */
+
+/* rightArrow */
+.rightArrow.horizTranslate {
+    -webkit-transition: 3s;
+    -moz-transition: 3s;
+    -ms-transition: 3s;
+    -o-transition: 3s;
+    transition: 3s;
+    margin-left: 50% !important;
+}
+/* end rightArrow */
