@@ -52,6 +52,7 @@ h3 {
     font-weight: 500;
     line-height: 1.1;
     font-family: 'Open Sans', sans-serif;
+    font-size: 1.5em;
 }
 
 hr {
@@ -205,32 +206,32 @@ in a CSS animation sequence by defining styles for keyframes
 }
 /* end bouncing balls */
 
-/* animatedSquare */
-#animatedSquare {
+/* animatedCircle */
+#animatedCircle {
     margin: 0 auto;
     width: 100px;
     height: 100px;
     border-radius: 50%;
 
-    /* -webkit-animation-name: animatedSquare;
+    /* -webkit-animation-name: animatedCircle;
     -webkit-animation-duration: 2s;
-    animation-name: animatedSquare;
+    animation-name: animatedCircle;
     animation-duration: 2s; */
 
-    -webkit-animation: animatedSquare 2s infinite alternate;
-            animation: animatedSquare 2s infinite alternate;
+    -webkit-animation: animatedCircle 2s infinite alternate;
+            animation: animatedCircle 2s infinite alternate;
 }
 
-@-webkit-keyframes animatedSquare {
+@-webkit-keyframes animatedCircle {
     from {background-color:  #eaf2f8 ;}
     to {background-color:  #154360 ;}
 }
 
-@keyframes animatedSquare {
+@keyframes animatedCircle {
     from {background-color:  #eaf2f8 ;}
     to {background-color:  #154360 ;}
 }
-/* end animatedSquare */
+/* end animatedCircle */
 
 /* rightArrow */
 .rightArrow.horizTranslate {
@@ -242,3 +243,79 @@ in a CSS animation sequence by defining styles for keyframes
     margin-left: 50% !important;
 }
 /* end rightArrow */
+
+/* transitionSquare */
+.transitionSquare {
+    width: 100px;
+    height: 100px;
+    background: #851c75;
+    -webkit-transition: width 2s, background-color 2s ease;
+            transition: width 2s, background-color 2s ease;
+}
+
+.transitionSquare:hover {
+    width: 400px;
+    background: #20a055;
+}
+/* end transitionSquare */
+
+/* transitionSquare2 */
+.transitionSquare2 {
+    width: 100px;
+    height: 100px;
+    background: #851c75;
+    -webkit-transition: width 2s, background-color 2s ease;
+            transition: width 2s, background-color 2s ease;
+}
+
+.transitionSquare2-active {
+    width: 400px;
+    background: #20a055;
+}
+/* end transitionSquare2 */
+
+/* transform */
+.transform {
+    background-color: #bd4015;
+    height: 100px;
+    width: 100px;
+    animation: skew 2s infinite;
+    transform: skew(20deg);
+    animation-direction: alternate;
+}
+
+@keyframes skew {
+    0% {
+      transform: skewX(40deg);
+    }
+    100% {
+      transform: skewX(-40deg);
+    }
+}
+/* end transform */
+
+/* animationEx */
+.animationEx {
+    height: 120px;
+    width: 120px;
+    margin: 0 auto;
+    background-color: red;
+    -webkit-animation: stretch 2s infinite alternate;
+            animation: stretch 2s infinite alternate;
+}
+
+@keyframes stretch {
+    0% {
+      transform: scale(.3);
+      background-color: red;
+      border-radius: 100%;
+    }
+    50% {
+      background-color: orange;
+    }
+    100% {
+      transform: scale(1.5);
+      background-color: yellow;
+    }
+}
+/* end animationEx */
